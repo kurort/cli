@@ -1,0 +1,48 @@
+{
+    "name": "kurort/cli",
+    "description": "Easy personal server management.",
+    "keywords": [
+        "server"
+    ],
+    "type": "project",
+    "license": "MIT",
+    "homepage": "https://github.com/kurort/",
+    "support": {
+        "issues": "https://github.com/kurort/cli/issues",
+        "source": "https://github.com/kurort/cli",
+        "docs": "https://github.com/kurort/"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kurort\\Cli\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kurort\\Cli\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexandr Chernyaev",
+            "email": "bliz48rus@gmail.com",
+            "homepage": "https://tabuna.github.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/console": "^8.0",
+        "illuminate/events": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0|^9.3"
+    },
+    "bin": [
+        "bin/kurort"
+    ],
+    "config": {
+        "sort-packages": true
+    }
+}
