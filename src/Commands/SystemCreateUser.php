@@ -15,7 +15,7 @@ class SystemCreateUser extends Command
      *
      * @var string
      */
-    protected $signature = 'system:create-user';
+    protected $signature = 'system:create-user {name} {password}';
 
     /**
      * The console command description.
