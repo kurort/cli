@@ -22,7 +22,7 @@ class SystemCreateUser extends Command
      *
      * @var string
      */
-    protected $description = 'This is a simple hello world';
+    protected $description = 'This is a command for creates new user.';
 
     /**
      * Execute the console command.
@@ -31,25 +31,23 @@ class SystemCreateUser extends Command
      */
     public function handle()
     {
-        $name =  $this->argument('name');
-        $password =  $this->argument('password');
+        $name = $this->argument('name');
+        $password = $this->argument('password');
 
         $command = sprintf('useradd -m %s', $name);
 
         Process::run($command, function ($output) {
             if (Str::contains($output, 'already exists')) {
                 $this->warn($output);
-            }else{
+            } else {
                 $this->comment('User created');
             }
         });
 
-        $command = sprintf(' echo "%s:%s" | /usr/sbin/chpasswd', $name, $password);
+        $command = sprintf('echo "%s:%s" | /usr/sbin/chpasswd', $name, $password);
 
-        Process::run($command, function (string $output) {
-            if (empty($output)) {
-                $this->comment('User set you password');
-            }
+        Process::run($command, function () {
+            $this->comment('User set you password');
         });
 
         $this->comment('Hello World');

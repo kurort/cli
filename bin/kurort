@@ -14,11 +14,18 @@ use Illuminate\Console\Application;
 $container = new Container;
 $events = new Dispatcher($container);
 
-$artisan = new Application($container, $events, 'Version 1');
-$artisan->setName('My Console App Name');
+$kurort = new Application($container, $events, 'Version 1');
+$kurort->setName('My Console App Name');
 
 // Bind a command
-$artisan->resolve(\Kurort\Cli\Commands\HelloWorld::class);
-$artisan->resolve(\Kurort\Cli\Commands\ServiceStatus::class);
-$artisan->resolve(\Kurort\Cli\Commands\SystemCreateUser::class);
-$artisan->run();
+$kurort->resolve(\Kurort\Cli\Commands\HelloWorld::class);
+$kurort->resolve(\Kurort\Cli\Commands\ServiceStatus::class);
+
+
+// Systems
+$kurort->resolve(\Kurort\Cli\Commands\SystemCreateUser::class);
+$kurort->resolve(\Kurort\Cli\Commands\SystemUpdate::class);
+
+
+
+$kurort->run();
