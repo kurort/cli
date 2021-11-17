@@ -3,17 +3,15 @@
 namespace Kurort\Cli\Commands;
 
 use Illuminate\Console\Command;
-use Kurort\Cli\SpinnerProgress;
-use Symfony\Component\Console\Output\OutputInterface;
 
-class HelloWorld extends Command
+class Install extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'hello:world';
+    protected $signature = 'install';
 
     /**
      * The console command description.
@@ -31,6 +29,6 @@ class HelloWorld extends Command
     {
         $this->comment('Hello World');
 
-        return Command::SUCCESS;
+         return Command::SUCCESS;
     }
 }

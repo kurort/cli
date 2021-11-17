@@ -19,5 +19,5 @@ $artisan->setName('My Console App Name');
 
 // Bind a command
 $artisan->resolve(\Kurort\Cli\Commands\HelloWorld::class);
-
+$artisan->resolve(\Kurort\Cli\Commands\ServiceStatus::class);
 $artisan->run();
