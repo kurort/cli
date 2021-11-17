@@ -2,37 +2,16 @@
 
 namespace Kurort\Cli;
 
-use Illuminate\Support\Arr;
-use PhpParser\Error;
-use Symfony\Component\Process\Process as SymfonyProcess;
-
 class Process
 {
     /**
-     * @param  string|array   $command
-     * @param  callable|null  $success
-     * @param  callable|null  $error
+     * @param  string    $command
+     * @param  callable  $handle
      */
-    public static function run(string|array $command, callable $success = null, callable $error = null)
+    public static function run(string $command, callable $handle): void
     {
-        $process = new SymfonyProcess(Arr::wrap($command));
+        exec($command, $output);
 
-        try {
-            $process->start();
-            self::then($success, $process->getOutput());
-        } catch (\Exception|Error $exception){
-            self::then($error, $exception);
-        }
-    }
-
-    /**
-     * @param callable|null $callable
-     * @param mixed $result
-     */
-    public static function then($callable, $result)
-    {
-        if($callable !== null){
-            $callable($result);
-        }
+        $handle($output);
     }
 }

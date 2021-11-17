@@ -3,8 +3,6 @@
 namespace Kurort\Cli\Commands;
 
 use Illuminate\Console\Command;
-use Kurort\Cli\SpinnerProgress;
-use Symfony\Component\Console\Output\OutputInterface;
 
 class HelloWorld extends Command
 {

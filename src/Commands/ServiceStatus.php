@@ -31,7 +31,7 @@ class ServiceStatus extends Command
     {
         $service = $this->argument('service');
 
-        $command = sprintf('service /% status', $service);
+        $command = sprintf('service %s status', $service);
 
         Process::run($command, function ($output) use ($service) {
             $running = Str::contains($output, ['memcached is running', 'active (running)']);
