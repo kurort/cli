@@ -12,6 +12,6 @@ class Process
     {
         exec($command, $output);
 
-        $handle($output);
+        $handle(implode(PHP_EOL, $output));
     }
 }
