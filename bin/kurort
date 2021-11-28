@@ -21,11 +21,12 @@ $kurort->setName('My Console App Name');
 $kurort->resolve(\Kurort\Cli\Commands\HelloWorld::class);
 $kurort->resolve(\Kurort\Cli\Commands\ServiceStatus::class);
 
-
 // Systems
 $kurort->resolve(\Kurort\Cli\Commands\SystemCreateUser::class);
 $kurort->resolve(\Kurort\Cli\Commands\SystemUpdate::class);
 
-
+// Site
+$kurort->resolve(\Kurort\Cli\Commands\SiteAdd::class);
+$kurort->resolve(\Kurort\Cli\Commands\SiteRemove::class);
 
 $kurort->run();

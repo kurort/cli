@@ -34,7 +34,7 @@ class ServiceStatus extends Command
         $command = sprintf('service %s status', $service);
 
         Process::run($command, function ($output) use ($service) {
-            $running = Str::contains($output, ['memcached is running', 'active (running)']);
+            $running = Str::contains($output, [$service.' is running', 'active (running)']);
 
             $running
                 ? $this->comment($service.' is running')
