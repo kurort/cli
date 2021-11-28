@@ -62,7 +62,7 @@ class SiteAdd extends Command
             'robots.txt',
         ])->each(fn($file) => $fileSystem->copy(__DIR__.'/../../stubs/site/'.$file, "/home/kurort/$site/$file"));
 
-        $template = $fileSystem->get('/../../stubs/nginx');
+        $template = $fileSystem->get(__DIR__.'/../../stubs/nginx');
 
         $fileSystem->put("/etc/nginx/sites-available/$site", Str::of($template)->replace('$site', $site));
         //$this->fileManager->relativeLink("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
