@@ -1,11 +1,11 @@
 <?php
 
-namespace Kurort\Cli\Commands;
+namespace Kurort\Cli\Commands\Cron;
 
 use Illuminate\Console\Command;
 use Kurort\Cli\Process;
 
-class CronList extends Command
+class Show extends Command
 {
     /**
      * The name and signature of the console command.

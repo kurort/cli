@@ -1,11 +1,11 @@
 <?php
 
-namespace Kurort\Cli\Commands;
+namespace Kurort\Cli\Commands\Site;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
-class SiteRemove extends Command
+class Remove extends Command
 {
     /**
      * The name and signature of the console command.

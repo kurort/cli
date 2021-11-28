@@ -1,20 +1,20 @@
 <?php
 
-namespace Kurort\Cli\Commands;
+namespace Kurort\Cli\Commands\Site;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 use Kurort\Cli\Paths;
 
-class SiteAdd extends Command
+class Create extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'site:add {site}';
+    protected $signature = 'site:create {site}';
 
     /**
      * The console command description.

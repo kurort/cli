@@ -10,6 +10,8 @@ if (file_exists(__DIR__.'/../../../autoload.php')) {
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Console\Application;
+use Kurort\Cli\Commands\Site;
+use Kurort\Cli\Commands\Cron;
 
 $container = new Container;
 $events = new Dispatcher($container);
@@ -25,8 +27,11 @@ $kurort->resolve(\Kurort\Cli\Commands\ServiceStatus::class);
 $kurort->resolve(\Kurort\Cli\Commands\SystemCreateUser::class);
 $kurort->resolve(\Kurort\Cli\Commands\SystemUpdate::class);
 
+// Cron
+$kurort->resolve(Cron\Show::class);
+
 // Site
-$kurort->resolve(\Kurort\Cli\Commands\SiteAdd::class);
-$kurort->resolve(\Kurort\Cli\Commands\SiteRemove::class);
+$kurort->resolve(Site\Create::class);
+$kurort->resolve(Site\Remove::class);
 
 $kurort->run();
