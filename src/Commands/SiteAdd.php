@@ -34,10 +34,6 @@ class SiteAdd extends Command
     {
         $this->fileManager = $filesystemManager;
 
-        dd(
-            $this->fileManager->disk()
-        );
-
         parent::__construct();
     }
 
