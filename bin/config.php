@@ -31,24 +31,18 @@ return [
         'disks' => [
 
             'global' => [
-                'local' => [
-                    'driver' => 'local',
-                    'root' => '/',
-                ],
+                'driver' => 'local',
+                'root' => '/',
             ],
 
             'nginx' => [
-                'local' => [
-                    'driver' => 'local',
-                    'root' => '/etc/nginx',
-                ],
+                'driver' => 'local',
+                'root' => '/etc/nginx',
             ],
 
             'home' => [
-                'local' => [
-                    'driver' => 'local',
-                    'root' => '/home',
-                ],
+                'driver' => 'local',
+                'root' => '/home',
             ],
 
             'stubs' => [
