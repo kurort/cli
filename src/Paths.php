@@ -13,7 +13,7 @@ class Paths
      */
     public static function stubs(string $path)
     {
-        return __DIR__.'/../../stubs'.Str::of($path)->start('/');
+        return __DIR__.'/../stubs'.Str::of($path)->start('/');
     }
 
     /**
@@ -23,7 +23,7 @@ class Paths
      */
     public static function nginx(string $path)
     {
-        return __DIR__.'/../stubs'.Str::of($path)->start('/');
+        return '/etc/nginx'.Str::of($path)->start('/');
     }
 
     /**
