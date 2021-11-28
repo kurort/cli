@@ -5,6 +5,7 @@ namespace Kurort\Cli\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
+use \Illuminate\Filesystem\FilesystemManager;
 
 class SiteAdd extends Command
 {
@@ -23,6 +24,21 @@ class SiteAdd extends Command
     protected $description = 'This is a simple hello world';
 
     /**
+     * @var FilesystemManager
+     */
+    private FilesystemManager $fileManager;
+
+    /**
+     * @param  FilesystemManager  $filesystemManager
+     */
+    public function __construct(FilesystemManager $filesystemManager)
+    {
+        $this->fileManager = $filesystemManager;
+
+        parent::__construct();
+    }
+
+    /**
      * Execute the console command.
      *
      * @return int
@@ -31,28 +47,24 @@ class SiteAdd extends Command
     public function handle()
     {
         $site = $this->argument('site');
-        $files = new Filesystem();
 
-        if ($files->exists("/home/kurort/$site")) {
+        if ($this->fileManager->disk('home')->exists($site)) {
             $this->warn('Site exist');
             return Command::INVALID;
         }
 
-        $files->makeDirectory("/home/kurort/$site");
+        $this->fileManager->disk('home')->makeDirectory($site);
 
         collect([
             __DIR__.'/../../stubs/site/favicon.ico',
             __DIR__.'/../../stubs/site/index.html',
             __DIR__.'/../../stubs/site/robots.txt',
-        ])->each(fn($file) => $files->copy($file, "/home/kurort/$site"));
+        ])->each(fn($file) => $this->fileManager->disk('global')->copy($file, "/home/kurort/$site"));
 
-        $template = $files->get(__DIR__.'/../../stubs/nginx');
-        $files->put("/etc/nginx/sites-available/$site", Str::of($template)->replace('$site', $site));
-        $files->link("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
+        $template = $this->fileManager->disk('stubs')->get('nginx');
 
-        collect([
-            __DIR__.'/../../stubs/nginx',
-        ])->each(fn($file) => $files->copy($file, "/home/kurort/$name"));
+        $this->fileManager->put("/etc/nginx/sites-available/$site", Str::of($template)->replace('$site', $site));
+        $this->fileManager->link("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
 
         return Command::SUCCESS;
     }
