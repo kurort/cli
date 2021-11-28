@@ -47,7 +47,7 @@ return [
 
             'stubs' => [
                 'driver' => 'local',
-                'root' => __DIR__.'/stubs',
+                'root' => __DIR__.'/../stubs',
             ],
         ],
     ],
