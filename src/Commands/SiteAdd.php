@@ -55,10 +55,10 @@ class SiteAdd extends Command
         $this->fileManager->disk('home')->makeDirectory($site);
 
         collect([
-            __DIR__.'/../../stubs/site/favicon.ico',
-            __DIR__.'/../../stubs/site/index.html',
-            __DIR__.'/../../stubs/site/robots.txt',
-        ])->each(fn($file) => $this->fileManager->disk('global')->copy($file, "/home/kurort/$site"));
+            'favicon.ico',
+            'index.html',
+            'robots.txt',
+        ])->each(fn($file) => $this->fileManager->disk('global')->copy(__DIR__.'/../../stubs/site/'.$file, "/home/kurort/$site/$file"));
 
         $template = $this->fileManager->disk('stubs')->get('nginx');
 
