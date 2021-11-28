@@ -63,7 +63,7 @@ class SiteAdd extends Command
         $template = $this->fileManager->disk('stubs')->get('nginx');
 
         $this->fileManager->put("/etc/nginx/sites-available/$site", Str::of($template)->replace('$site', $site));
-        $this->fileManager->link("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
+        $this->fileManager->relativeLink("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
 
         return Command::SUCCESS;
     }
