@@ -69,7 +69,7 @@ class SiteAdd extends Command
 
 
         $fileSystem = new Filesystem();
-        $fileSystem->relativeLink("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
+        $fileSystem->link("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
 
         return Command::SUCCESS;
     }
