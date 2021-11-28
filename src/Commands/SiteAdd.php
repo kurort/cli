@@ -47,28 +47,27 @@ class SiteAdd extends Command
     public function handle()
     {
         $site = $this->argument('site');
+        $fileSystem = new Filesystem();
 
-
-        if ($this->fileManager->disk('home')->exists($site)) {
+        if ($fileSystem->exists('/home/kurort/'.$site)) {
             $this->warn('Site exist');
             return Command::INVALID;
         }
 
-        $this->fileManager->disk('home')->makeDirectory($site);
+        $fileSystem->makeDirectory('/home/kurort/'.$site);
 
         collect([
             'favicon.ico',
             'index.html',
             'robots.txt',
-        ])->each(fn($file) => $this->fileManager->disk('global')->copy(__DIR__.'/../../stubs/site/'.$file, "/home/kurort/$site/$file"));
+        ])->each(fn($file) => $fileSystem->copy(__DIR__.'/../../stubs/site/'.$file, "/home/kurort/$site/$file"));
 
-        $template = $this->fileManager->disk('stubs')->get('nginx');
+        $template = $fileSystem->get('/../../stubs/nginx');
 
-        $this->fileManager->put("/etc/nginx/sites-available/$site", Str::of($template)->replace('$site', $site));
+        $fileSystem->put("/etc/nginx/sites-available/$site", Str::of($template)->replace('$site', $site));
         //$this->fileManager->relativeLink("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
 
 
-        $fileSystem = new Filesystem();
         $fileSystem->link("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
 
         return Command::SUCCESS;
