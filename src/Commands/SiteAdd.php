@@ -3,6 +3,7 @@
 namespace Kurort\Cli\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 use \Illuminate\Filesystem\FilesystemManager;
 
@@ -47,6 +48,7 @@ class SiteAdd extends Command
     {
         $site = $this->argument('site');
 
+
         if ($this->fileManager->disk('home')->exists($site)) {
             $this->warn('Site exist');
             return Command::INVALID;
@@ -63,7 +65,11 @@ class SiteAdd extends Command
         $template = $this->fileManager->disk('stubs')->get('nginx');
 
         $this->fileManager->put("/etc/nginx/sites-available/$site", Str::of($template)->replace('$site', $site));
-        $this->fileManager->relativeLink("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
+        //$this->fileManager->relativeLink("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
+
+
+        $fileSystem = new Filesystem();
+        $fileSystem->relativeLink("/etc/nginx/sites-available/$site", "/etc/nginx/sites-enabled/$site");
 
         return Command::SUCCESS;
     }
