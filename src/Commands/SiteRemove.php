@@ -19,7 +19,7 @@ class SiteRemove extends Command
      *
      * @var string
      */
-    protected $description = 'This is a simple hello world';
+    protected $description = 'The function remove virtual host to a server';
 
     /**
      * Execute the console command.

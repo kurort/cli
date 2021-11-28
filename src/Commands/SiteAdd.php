@@ -21,7 +21,7 @@ class SiteAdd extends Command
      *
      * @var string
      */
-    protected $description = 'This is a simple hello world';
+    protected $description = 'The function adds virtual host to a server';
 
     /**
      * Execute the console command.
