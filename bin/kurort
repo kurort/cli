@@ -10,15 +10,8 @@ if (file_exists(__DIR__.'/../../../autoload.php')) {
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Console\Application;
-use Illuminate\Config\Repository;
-use Illuminate\Filesystem\FilesystemManager;
 
 $container = new Container;
-$container->instance('app', $container);
-$container['config'] = new Repository(require __DIR__ . '/config.php');
-
-$container->bind(FilesystemManager::class, fn () => new FilesystemManager($container));
-
 $events = new Dispatcher($container);
 
 $kurort = new Application($container, $events, 'Version 1');
