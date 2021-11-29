@@ -19,11 +19,7 @@ composer global require kurort/cli
 
 Make sure to place Composer's system-wide vendor bin directory in your `$PATH` so the Kurort executable can be located
 by your system. This directory exists in different locations based on your operating system; however, some common
-locations include:
-
-- macOS: `$HOME/.composer/vendor/bin`
-- Windows: `%USERPROFILE%\AppData\Roaming\Composer\vendor\bin`
-- GNU / Linux Distributions: `$HOME/.config/composer/vendor/bin` or `$HOME/.composer/vendor/bin`
+locations include for GNU / Linux Distributions: `$HOME/.config/composer/vendor/bin` or `$HOME/.composer/vendor/bin`
 
 You could also find the composer's global installation path by running `composer global about` and looking up from the
 first line.
