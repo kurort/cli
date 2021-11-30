@@ -17,6 +17,20 @@ elementum, odio elit ultricies purus, sed euismod neque tellus vel ipsum.
 
 ## Getting started
 
+Connect to your server as root via SSH
+
+```
+ssh root@your.server
+```
+
+Download the installation script, and run it:
+
+```bash
+curl http://example.com/install.sh | bash
+```
+
+## Composer
+
 Kurort utilizes [Composer](https://getcomposer.org/) to manage its dependencies. So, before using Kurort, make sure you have Composer installed on
 your machine.
 
