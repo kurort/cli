@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Kurort** is an application for easy management of your personal web server. Kurort tries to simplify the work with the processes necessary for most web projects, such as:
+**Kurort** is an application for easy management of your personal web server. Kurort tries to simplify the work with the processes necessary for most PHP applications, such as:
 
 * Create Nginx virtual host 
 * Adding new MySQL databases
