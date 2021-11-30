@@ -29,6 +29,8 @@ Download the installation script, and run it:
 curl http://example.com/install.sh | bash
 ```
 
+Follow the installation instructions. As a result, PHP, Composer, MySQL, Nginx, Redis, and Supervisor will be installed on your server.
+
 ## Composer
 
 Kurort utilizes [Composer](https://getcomposer.org/) to manage its dependencies. So, before using Kurort, make sure you have Composer installed on
