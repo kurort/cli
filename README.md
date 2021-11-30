@@ -31,6 +31,18 @@ curl http://example.com/install.sh | bash
 
 Follow the installation instructions. As a result, PHP, Composer, MySQL, Nginx, Redis, and Supervisor will be installed on your server.
 
+
+## Kurort way
+
+
+After installation, a new user will be created on your server under the name `kurort`, in whose home directory all your projects will be located.All Cron tasks will be executed on behalf of this user, and he will also be used to connect to MySQL.
+
+You can easily log in under it using the command:
+
+```bash
+su kurort
+```
+
 ## Composer
 
 Kurort utilizes [Composer](https://getcomposer.org/) to manage its dependencies. So, before using Kurort, make sure you have Composer installed on
