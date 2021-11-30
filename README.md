@@ -37,7 +37,7 @@ Follow the installation instructions. As a result, PHP, Composer, MySQL, Nginx, 
 
 After installation, a new user `kurort` will be created on your server, whose home directory all projects will be located. All Cron tasks will be executed on behalf of this user, and it will also be used to connect to MySQL.
 
-You can easily log in under it using the command:
+Whenever you need it (Almost all the time) to work on your applications and not on the server settings, you must perform operations under this user. You can easily log in under it using the command:
 
 ```bash
 su kurort
