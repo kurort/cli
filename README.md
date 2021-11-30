@@ -78,4 +78,5 @@ $ php vendor/bin/phpunit
 
 ## License
 
-Laravel Installer is open-sourced software licensed under the [MIT license](LICENSE).
+Kurort is open-source software released under the [MIT license](LICENSE), which means you can modify the code yourself or hire a freelancer if needed. Also, you can always check the code and make sure there are no backdoors or spyware modules in it.
+
