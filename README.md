@@ -61,20 +61,6 @@ others get on board!
 Send a tweet, write a blog post, give a talk at your local user group or conference. There are many ways you can help.
 You can always reach out to us in private and help others in our support channels. Thank you!
 
-## Tests
-
-To run the test suite, you first need to clone this repo and then install all
-dependencies [through Composer](https://getcomposer.org):
-
-```bash
-$ composer install
-```
-
-To run the test suite, go to the project root and run:
-
-```bash
-$ php vendor/bin/phpunit
-```
 
 ## License
 
