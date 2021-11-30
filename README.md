@@ -2,6 +2,8 @@
 
 ## Introduction
 
+"Kurort" is an application for easy management of a personal server.
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit augue fringilla, euismod eros sit amet,
 malesuada felis. Curabitur scelerisque tempus porttitor.
 
