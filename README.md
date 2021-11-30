@@ -33,6 +33,16 @@ feugiat viverra erat facilisis. Fusce tempus dignissim lacus, at molestie magna 
 mauris tincidunt, sit amet ullamcorper odio feugiat. Duis in sagittis diam. Aenean congue lorem mi, quis tristique urna
 sollicitudin malesuada.
 
+## Requirements
+
+These are the following requirements to run Kurort properly on your server.
+
+- Ubuntu (LTS preferred)
+- 1024MB RAM or more
+- 1 CPU core or more
+- Solid internet connection
+- 2GB free hard disk space (for Nginx, MySQL etc.)
+
 ## Support
 
 Do you have a question and need help with Kurort? Don't worry. We're here to help!
