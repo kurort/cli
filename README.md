@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Kurort** is an application for easy management of your personal web server that supports the [Ubuntu](https://ubuntu.com/) system. Kurort tries to simplify the work with the processes necessary for most PHP applications, such as:
+**Kurort** is an application for easy management of your personal web server that supports the Ubuntu system. Kurort tries to simplify the work with the processes necessary for most PHP applications, such as:
 
 * Create Nginx virtual host 
 * Adding new MySQL databases
@@ -70,7 +70,7 @@ sollicitudin malesuada.
 
 These are the following requirements to run Kurort properly on your server.
 
-- Ubuntu (LTS preferred)
+- [Ubuntu](https://ubuntu.com/) (LTS preferred)
 - 512MB RAM or more
 - 1 CPU core or more
 - Solid internet connection
