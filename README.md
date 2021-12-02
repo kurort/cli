@@ -59,13 +59,6 @@ locations include for GNU / Linux Distributions: `$HOME/.config/composer/vendor/
 You could also find the composer's global installation path by running `composer global about` and looking up from the
 first line.
 
-In ullamcorper lorem velit, id fringilla metus ornare vitae. Phasellus facilisis nibh dolor, ac laoreet orci ultrices
-at. Nulla risus orci, ultricies quis elementum sit amet, tincidunt ac mi. Pellentesque vehicula volutpat ligula, in
-dapibus dolor. Maecenas sit amet consectetur nibh, et hendrerit justo. Donec pellentesque nunc eu purus eleifend,
-feugiat viverra erat facilisis. Fusce tempus dignissim lacus, at molestie magna aliquam ut. Morbi lacinia sapien sed
-mauris tincidunt, sit amet ullamcorper odio feugiat. Duis in sagittis diam. Aenean congue lorem mi, quis tristique urna
-sollicitudin malesuada.
-
 ## Requirements
 
 These are the following requirements to run Kurort properly on your server.
