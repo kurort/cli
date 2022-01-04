@@ -9,11 +9,6 @@
 * Scheduled cron jobs
 * Supervisor Process Management
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit augue fringilla, euismod eros sit amet,
-malesuada felis. Curabitur scelerisque tempus porttitor.
-
-Nullam lobortis justo a cursus efficitur. Aliquam erat volutpat. Nunc eu lacus ligula. Nunc pretium, ipsum id volutpat
-elementum, odio elit ultricies purus, sed euismod neque tellus vel ipsum.
 
 ## Getting started
 
