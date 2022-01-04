@@ -1,4 +1,4 @@
-# Command-line interface
+# Kurort (Command-line interface)
 
 ## Introduction
 
